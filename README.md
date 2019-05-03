@@ -6,11 +6,16 @@ A ideia do jogo é conter as mecânicas do Super Mario Kart, e adicionar ao jogo
 ## Mecânicas
 
 ### Carro
-<img src= "https://github.com/gabrielcassimiro/Battle-Car-Project/blob/master/blob/Screenshots/Kart%20Game%20Project%20gif%202.gif">
+<p align="center">
+<img src= "https://github.com/gabrielcassimiro/Battle-Car-Project/blob/master/blob/Screenshots/Kart%20Game%20Project%20gif%202.gif"width="800"/>
+  </p>
 
 ### Atirar
-<img src = "https://github.com/gabrielcassimiro/Battle-Car-Project/blob/master/blob/Screenshots/Kart%20Game%20Project%20-%20Fire.gif">
+<p align="center">
+<img src = "https://github.com/gabrielcassimiro/Battle-Car-Project/blob/master/blob/Screenshots/Kart%20Game%20Project%20-%20Fire.gif"width="800"/>
+  </p>
 
 ### Multiplayer Local com 2 Jogadores
-<img src= "https://github.com/gabrielcassimiro/Battle-Car-Project/blob/master/blob/Screenshots/Kart%20Game%20Project%20mplocal%20gif%203.gif">
-
+<p align="center">
+<img src= "https://github.com/gabrielcassimiro/Battle-Car-Project/blob/master/blob/Screenshots/Kart%20Game%20Project%20mplocal%20gif%203.gif"width="800"/>
+  </p>
