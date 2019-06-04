@@ -7,7 +7,9 @@ TagManager:
   - Bullet
   - Player1
   - Player2
-  - Objetos
+  - Moeda
+  - CaixaMunicao
+  - CaixaMetal
   layers:
   - Default
   - TransparentFX

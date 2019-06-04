@@ -1209,6 +1209,7 @@ GameObject:
   - component: {fileID: 1541116888217096626}
   - component: {fileID: 1541116888217096628}
   - component: {fileID: 1541116888217096629}
+  - component: {fileID: 7248809308189745335}
   m_Layer: 0
   m_Name: Car_01
   m_TagString: Untagged
@@ -1304,6 +1305,19 @@ MonoBehaviour:
   m_BrakeTorque: 3000
   m_DriveMode: 2
   m_SpeedMode: 1
+--- !u!114 &7248809308189745335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541116888217096624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdfde5d550522e64db37af5c850a2ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Moedas: 0
 --- !u!1 &1541116888307791139
 GameObject:
   m_ObjectHideFlags: 0
