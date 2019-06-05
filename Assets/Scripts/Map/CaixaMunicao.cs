@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class CaixaMunicao : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private PlayerManager m_Player;
 
-    // Update is called once per frame
-    void Update()
-    {
+    private void OnTriggerEnter(Collider other) {
         
+        if(!(other.CompareTag("Player1") || other.CompareTag("Player2"))){
+            return;
+        }
+
+        m_Player = other.GetComponent<PlayerManager>();
+
+        m_Player.m_Flechas += 5;
+        Destroy(this.gameObject);
+
     }
 }

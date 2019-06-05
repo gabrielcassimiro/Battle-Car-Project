@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4613559598321763074}
   - component: {fileID: 4613559598321763073}
   - component: {fileID: 4613559598321763072}
+  - component: {fileID: 6834091991402734018}
   m_Layer: 0
   m_Name: "Caixa Muni\xE7\xE3o"
   m_TagString: CaixaMunicao
@@ -122,3 +123,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SpeedRotate: 75
   m_MoveAxisRotation: {x: 0, y: 1, z: 0}
+--- !u!114 &6834091991402734018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4613559598321763079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1824e09c29e7daf4585e9eaecf3a0e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

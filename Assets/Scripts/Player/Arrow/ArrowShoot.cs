@@ -8,7 +8,7 @@ public class ArrowShoot : MonoBehaviour
     [SerializeField] private string m_InputFire;
     
     [Header("Instantiate Arrow")]
-     [SerializeField]
+    [SerializeField]
     private Rigidbody m_ArrowPrefab;
 
     [SerializeField]
@@ -35,24 +35,34 @@ public class ArrowShoot : MonoBehaviour
     [SerializeField]
     private bool Fire;
 
+    private PlayerManager m_Player;
+
+    private void Start() {
+        m_Player = GetComponentInParent<PlayerManager>();
+        Debug.Log(m_Player);
+    }
+
     public void Update()
     {
-        m_timeToBullet += Time.deltaTime;
+        if(m_Player.m_Flechas > 0){
+            m_timeToBullet += Time.deltaTime;
 
-        if (Input.GetButton(m_InputFire) && m_timeToBullet > m_BulletReady)
-        {
-            m_CurrentForce = Mathf.Lerp(m_MinForce, m_MaxForce, m_ElapsedTime / m_TimeToMaxForce);
-            m_ElapsedTime += Time.deltaTime;
-            Fire = true;
-        }
+            if (Input.GetButton(m_InputFire) && m_timeToBullet > m_BulletReady)
+            {
+                m_CurrentForce = Mathf.Lerp(m_MinForce, m_MaxForce, m_ElapsedTime / m_TimeToMaxForce);
+                m_ElapsedTime += Time.deltaTime;
+                Fire = true;
+            }
 
-        if (Input.GetButtonUp(m_InputFire) && Fire)
-        {
-            Fire = false;
-            m_timeToBullet = 0;
-            m_ElapsedTime = 0.0f;
-            Rigidbody arrow = Instantiate<Rigidbody>(m_ArrowPrefab, m_ArrowSpawn.position, m_ArrowSpawn.rotation);
-            arrow.AddForce(m_ArrowSpawn.up * m_CurrentForce, ForceMode.VelocityChange);
+            if (Input.GetButtonUp(m_InputFire) && Fire)
+            {
+                Fire = false;
+                m_timeToBullet = 0;
+                m_ElapsedTime = 0.0f;
+                Rigidbody arrow = Instantiate<Rigidbody>(m_ArrowPrefab, m_ArrowSpawn.position, m_ArrowSpawn.rotation);
+                arrow.AddForce(m_ArrowSpawn.up * m_CurrentForce, ForceMode.VelocityChange);
+                m_Player.m_Flechas--;
+            }
         }
     }
 }
