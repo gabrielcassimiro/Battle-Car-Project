@@ -39,13 +39,12 @@ public class ArrowShoot : MonoBehaviour
 
     private void Start() {
         m_Player = GetComponentInParent<PlayerManager>();
-        Debug.Log(m_Player);
     }
 
     public void Update()
     {
+        m_timeToBullet += Time.deltaTime;
         if(m_Player.m_Flechas > 0){
-            m_timeToBullet += Time.deltaTime;
 
             if (Input.GetButton(m_InputFire) && m_timeToBullet > m_BulletReady)
             {

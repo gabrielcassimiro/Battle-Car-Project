@@ -21,7 +21,7 @@ public class Portal : MonoBehaviour
     private bool m_PortalOn = true;
 
     [SerializeField]
-    private string[] m_Tags = { "Player1", "Player2", "Objetos" };
+    private string[] m_Tags = { "Player1", "Player2" };
 
     public void OnTriggerEnter(Collider other)
     {
