@@ -21,6 +21,7 @@ public class Magnetism : MonoBehaviour
 
         foreach (var collider in colliders)
         {
+            Debug.Log("Objeto: " + collider.name);
             Rigidbody body = collider.GetComponent<Rigidbody>();
             if (!body) continue;
 
@@ -30,6 +31,7 @@ public class Magnetism : MonoBehaviour
             if (distance < m_StopRadius) continue;
 
             body.AddForce(direction.normalized * (m_Force / distance) * body.mass /* * Time.deltaTime*/ * signal);
+            Debug.Log("Objeto com força teoricamente aplicada: " + collider.name);
         }
     }
 
