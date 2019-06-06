@@ -10,6 +10,9 @@ TagManager:
   - Moeda
   - CaixaMunicao
   - CaixaMetal
+  - Magnet
+  - Balao
+  - Laser
   layers:
   - Default
   - TransparentFX
@@ -22,8 +25,8 @@ TagManager:
   - Player1
   - Player2
   - Portal
-  - 
-  - 
+  - MagnetismA
+  - MagnetismR
   - 
   - 
   - 
