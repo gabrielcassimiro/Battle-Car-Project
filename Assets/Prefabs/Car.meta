@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Car.meta
 guid: 3327372ee8b496549bbadac1b61eb374
+=======
+guid: 628a872f133484d449fda7dde91d9296
+>>>>>>> master:Assets/Prefabs/Cars.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
