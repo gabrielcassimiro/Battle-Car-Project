@@ -14,7 +14,7 @@ public class CaixaMunicao : MonoBehaviour
 
         m_Player = other.GetComponent<PlayerManager>();
 
-        m_Player.m_Flechas += 5;
+        m_Player.m_Arrows += 5;
         Destroy(this.gameObject);
 
     }

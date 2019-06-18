@@ -14,7 +14,7 @@ public class Moeda : MonoBehaviour
         }
 
         m_Player = other.GetComponent<PlayerManager>();
-        m_Player.m_Moedas++;
+        m_Player.m_Coins++;
         Destroy(this.gameObject);
     }
 }

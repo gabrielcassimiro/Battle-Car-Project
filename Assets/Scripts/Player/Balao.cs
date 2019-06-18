@@ -8,7 +8,7 @@ public class Balao : MonoBehaviour
     {
         if (other.CompareTag("Laser") || other.CompareTag("Bullet"))
         {
-            GetComponentInParent<PlayerManager>().m_Baloes--;
+            GetComponentInParent<PlayerManager>().m_Ballons--;
             Destroy(this.gameObject);
         }
     }

@@ -44,7 +44,7 @@ public class ArrowShoot : MonoBehaviour
     public void Update()
     {
         m_timeToBullet += Time.deltaTime;
-        if(m_Player.m_Flechas > 0){
+        if(m_Player.m_Arrows > 0){
 
             if (Input.GetButton(m_InputFire) && m_timeToBullet > m_BulletReady)
             {
@@ -60,7 +60,7 @@ public class ArrowShoot : MonoBehaviour
                 m_ElapsedTime = 0.0f;
                 Rigidbody arrow = Instantiate<Rigidbody>(m_ArrowPrefab, m_ArrowSpawn.position, m_ArrowSpawn.rotation);
                 arrow.AddForce(m_ArrowSpawn.up * m_CurrentForce, ForceMode.VelocityChange);
-                m_Player.m_Flechas--;
+                m_Player.m_Arrows--;
             }
         }
     }

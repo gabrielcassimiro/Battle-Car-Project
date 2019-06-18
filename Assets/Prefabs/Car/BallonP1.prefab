@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7685781597205987283}
   - component: {fileID: 1550777897165860891}
   m_Layer: 0
-  m_Name: "Bal\xE3o"
+  m_Name: BallonP1
   m_TagString: Balao
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: c7f63d64dcf25a745b3a5edb3692c330, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
