@@ -36,11 +36,13 @@ public class GameController : MonoBehaviour
         if(!m_GameOver) m_Timer -= Time.deltaTime;
         if (m_SuddenDeath)
         {
-            if(m_Player1BallonOld > m_PlayerManager1.m_Ballons || m_Player1CoinOld < m_PlayerManager1.m_Coins)
+            if(m_Player1BallonOld > m_PlayerManager1.m_Ballons || m_Player1CoinOld < m_PlayerManager1.m_Coins 
+                || m_PlayerManager2.m_Coins > m_PlayerManager1.m_Coins || m_PlayerManager2.m_Ballons > m_PlayerManager1.m_Ballons)
             {
                 GameOver(m_PlayerManager2);
             }
-            if(m_Player2BallonOld > m_PlayerManager2.m_Ballons || m_Player2CoinOld < m_PlayerManager2.m_Coins)
+            if(m_Player2BallonOld > m_PlayerManager2.m_Ballons || m_Player2CoinOld < m_PlayerManager2.m_Coins
+                || m_PlayerManager1.m_Coins > m_PlayerManager2.m_Coins || m_PlayerManager1.m_Ballons > m_PlayerManager2.m_Ballons)
             {
                 GameOver(m_PlayerManager1);
             }
@@ -51,12 +53,12 @@ public class GameController : MonoBehaviour
         }
         if (m_Timer <= 0 && !m_SuddenDeath && !m_GameOver)
         {
-            if (m_PlayerManager1.m_Coins == m_PlayerManager2.m_Coins)
+            if (m_PlayerManager1.m_Coins == m_PlayerManager2.m_Coins && m_PlayerManager1.m_Ballons != m_PlayerManager2.m_Ballons)
             {
                 SuddenDeath();
                 StartCoroutine(GetComponent<HUD>().SuddenDeathText(3.0f));
             }
-            else if(m_PlayerManager1.m_Coins > m_PlayerManager2.m_Coins)
+            else if(m_PlayerManager1.m_Coins > m_PlayerManager2.m_Coins || m_PlayerManager1.m_Ballons > m_PlayerManager2.m_Ballons)
             {
                 GameOver(m_PlayerManager1);
             }

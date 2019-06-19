@@ -14,8 +14,7 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Confined;
+        
     }
 
     void Update()
