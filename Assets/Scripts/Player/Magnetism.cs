@@ -29,16 +29,7 @@ public class Magnetism : MonoBehaviour
             float distance = direction.magnitude;
             if (distance < m_StopRadius) continue;
 
-            body.AddForce(direction.normalized * (m_Force / distance) * body.mass /* * Time.deltaTime*/ * signal);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Moeda") || other.CompareTag("CaixaMunicao"))
-        {
-            other.GetComponent<MoveObject>().enabled = false;
-            other.GetComponent<RotateObject>().enabled = false;
+            body.AddForce(direction.normalized * (m_Force / distance) * body.mass * Time.deltaTime * signal);
         }
     }
 }

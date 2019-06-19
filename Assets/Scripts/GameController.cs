@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
     [HideInInspector] public PlayerManager m_PlayerManager1;
     [HideInInspector] public PlayerManager m_PlayerManager2;
 
-    public float m_Timer = 120.0f;
+    [HideInInspector] public float m_Timer = 120.0f;
+    [SerializeField] private float m_MaxTimer = 120.0f;
     public float m_SuddentDeathTimer = 30.0f;
     private int m_Player1CoinOld;
     private int m_Player2CoinOld;
@@ -22,6 +24,7 @@ public class GameController : MonoBehaviour
     {
         m_PlayerManager1 = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerManager>();
         m_PlayerManager2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerManager>();
+        m_Timer = m_MaxTimer;
     }
 
     private void Update()
@@ -30,7 +33,7 @@ public class GameController : MonoBehaviour
         {
             PauseGame();
         }
-        m_Timer -= Time.deltaTime;
+        if(!m_GameOver) m_Timer -= Time.deltaTime;
         if (m_SuddenDeath)
         {
             if(m_Player1BallonOld > m_PlayerManager1.m_Ballons || m_Player1CoinOld < m_PlayerManager1.m_Coins)
@@ -46,11 +49,12 @@ public class GameController : MonoBehaviour
                 GameOver(null);
             }
         }
-        if (m_Timer <= 0 && !m_SuddenDeath)
+        if (m_Timer <= 0 && !m_SuddenDeath && !m_GameOver)
         {
             if (m_PlayerManager1.m_Coins == m_PlayerManager2.m_Coins)
             {
                 SuddenDeath();
+                StartCoroutine(GetComponent<HUD>().SuddenDeathText(3.0f));
             }
             else if(m_PlayerManager1.m_Coins > m_PlayerManager2.m_Coins)
             {
@@ -82,6 +86,7 @@ public class GameController : MonoBehaviour
         if (winner == null)
         {
             GetComponent<HUD>().m_GameOverText.text = "EMPATE";
+            m_SuddenDeath = false;
         }
         else
         {
@@ -93,6 +98,9 @@ public class GameController : MonoBehaviour
     public void Retry()
     {
         Time.timeScale = 1;
+        m_Timer = m_MaxTimer;
+        m_GameOver = false;
+        SceneManager.LoadScene("Game");
     }
 
     private void SuddenDeath()
