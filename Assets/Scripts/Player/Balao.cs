@@ -6,7 +6,7 @@ public class Balao : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Laser") || other.CompareTag("Bullet"))
+        if (other.CompareTag("Bullet"))
         {
             GetComponentInParent<PlayerManager>().m_Ballons--;
             Destroy(this.gameObject);

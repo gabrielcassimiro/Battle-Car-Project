@@ -50,6 +50,10 @@ public class Laser : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, remainingDistance))
         {
+            if(hit.collider.CompareTag("Balao")){
+                hit.collider.GetComponentInParent<PlayerManager>().m_Ballons--;
+                Destroy(hit.collider.gameObject);
+            }
             direction = Vector3.Reflect(direction, hit.normal);
             position = hit.point;
             remainingDistance -= Vector3.Distance(startPosition, position);

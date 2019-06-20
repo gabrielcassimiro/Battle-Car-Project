@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SpeedRotate: 75
-  m_MoveAxisRotation: {x: 0, y: 1, z: 0}
+  m_MoveAxisRotation: {x: 0, y: 0, z: 1}
 --- !u!114 &6834091991402734018
 MonoBehaviour:
   m_ObjectHideFlags: 0

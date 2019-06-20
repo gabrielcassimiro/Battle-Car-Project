@@ -21,7 +21,7 @@ public class RespawnObject : MonoBehaviour
 
         yield return new WaitForSeconds(m_TimeToRespawn);
 
-        Instantiate(m_RespawnObject, transform.position, Quaternion.identity, transform.parent);
+        Instantiate(m_RespawnObject, transform.position, Quaternion.Euler(90f, 0f, 0f), transform.parent);
 
     }
 

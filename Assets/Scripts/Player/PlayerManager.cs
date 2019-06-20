@@ -35,14 +35,16 @@ public class PlayerManager : MonoBehaviour
         transform.position = m_RespawnPoint.position;
         transform.rotation = m_RespawnPoint.rotation;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
-        if (m_Coins - 3 < 0)
-        {
-            m_Ballons--;
-            Destroy(GetComponentInChildren<Balao>().gameObject);
-        }
-        else
-        {
-            m_Coins -= 3;
+        if(!GameObject.Find("GameManager").GetComponent<GameController>().m_GameOver){
+            if (m_Coins - 3 < 0)
+            {
+                m_Ballons--;
+                Destroy(GetComponentInChildren<Balao>().gameObject);
+            }
+            else
+            {
+                m_Coins -= 3;
+            }
         }
     }
 }
